@@ -1,0 +1,135 @@
+@font-face {
+    font-family: HawkeyeFont;
+    src: url(howbai-font.ttf);
+}
+
+
+:root {
+    --gray: #656a6d;
+    --black: #030303;
+    --purple: #5f68ab;
+    --violet: #79519a;
+    --lavanda: #a060ac;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(var(--purple), var(--lavanda), var(--violet));
+    width: 99%;
+    height: 719px;
+}
+
+div {
+    display: flex;
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #000;
+    padding: 0.5%;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin: 0;
+}
+
+.testo {
+    display: inline;
+    width: 20%;
+    border: 1px solid black;
+    text-align: center; 
+    background: linear-gradient(var(--violet), var(--lavanda));
+    padding: 2.5%;
+    height: 100px;
+    border-radius: 25px;
+}
+
+.testo:nth-child(1) {
+    margin-left: 1%;
+}
+
+.niente {
+    width: 5%;
+}
+
+.niente img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: yellow;
+    font-size: xx-large;
+    letter-spacing: 2px;
+    font-family: HawkeyeFont;
+}
+
+.testo:nth-child(1)::after {
+    content: 'HOME';
+}
+
+.testo:nth-child(3)::after {
+    content: 'ABOUT ME';
+}
+
+.testo:nth-child(5)::after {
+    content: 'VIDEO';
+}
+
+.testo:nth-child(7)::after {
+    content: 'FILM';
+}
+
+.testo::after {
+    position: absolute;
+    transform: translate(-92%, 180%);
+    color: yellow;
+    font-size: xx-large;
+    font-family: HawkeyeFont;
+    background-color: #030303;
+    opacity: 0;
+    transition: 300ms;
+    letter-spacing: 2px;
+    padding: 0.5%;
+}
+
+.testo:nth-child(1):hover {
+    background-image: url('hawkeye2.jpg');
+    background-size: cover;
+}
+
+.testo:where(:nth-child(1), :nth-child(3), :nth-child(5), :nth-child(7)):hover::after {
+    opacity: 1;
+}
+
+.testo:hover a {
+    opacity: 0;
+}
+
+.testo:nth-child(3):hover {
+    background-image: url('kate.jpg');
+    background-size: cover;
+}
+
+.testo:nth-child(7):hover {
+    background-image: url('yelena1.jpg');
+    background-size: cover;
+}
+
+.testo:nth-child(5):hover {
+    background-image: url('dog1.jpg');
+    background-size: cover;
+}
